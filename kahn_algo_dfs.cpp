@@ -6,7 +6,7 @@ using namespace std;
    |
    4<-0<-5
 
-this is for directed a cyclic graph
+this is for directed acyclic graph
 */
 void kahn_algo_dfs(vector<vector<int>>& adj,vector<int>& visited,int src, stack<int>& st)
 {
