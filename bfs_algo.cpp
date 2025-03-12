@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
 		adj[edge[0]].push_back(edge[1]);
 		adj[edge[1]].push_back(edge[0]);
 	}
-	vector<int> visited(4,0);
+	vector<int> visited(6,0);
 	bfs(adj,0,visited);
 	return 0;
 }
