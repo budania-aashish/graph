@@ -27,19 +27,18 @@ int main(int argc, char const *argv[])
 		pq.pop();
 		int src = top_pair.second; 
 		int cost = top_pair.first;
-		if(visited[src])
+		if(!visited[src])
 		{
-		    continue;
-		}
-		visited[src]=1;
-		total_cost+=cost;
-		for(auto neighbor : adj[src])
-		{
-			int node = neighbor.first;
-			int weight = neighbor.second; 
-			if(!visited[node])
+			visited[src]=1;
+			total_cost+=cost;
+			for(auto neighbor : adj[src])
 			{
-				pq.push({weight, node});
+				int node = neighbor.first;
+				int weight = neighbor.second; 
+				if(!visited[node])
+				{
+					pq.push({weight, node});
+				}
 			}
 		}
 	}
