@@ -22,19 +22,16 @@ int main(int argc, char const *argv[])
 		}
 	}
 
-	for (int i = 0; i < n-1; ++i)
+	for(auto edge : edges)
 	{
-		for(auto edge : edges)
-		{
-			int u = edge[0];
-			int v = edge[1];
-			int w = edge[2];
+		int u = edge[0];
+		int v = edge[1];
+		int w = edge[2];
 
-			if(dist[u]!=INT_MAX&&dist[v]>dist[u]+w)
-			{
-				cout<<"Negative cycle found"<<endl;
-				return 1;
-			}
+		if(dist[u]!=INT_MAX&&dist[v]>dist[u]+w)
+		{
+			cout<<"Negative cycle found"<<endl;
+			return 1;
 		}
 	}
 
