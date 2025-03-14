@@ -47,9 +47,14 @@ int main(int argc, char const *argv[])
 	vector<int> low(n,0);
 	vector<int> visited(n, 0);
 	int timer = 1; 
-	int src = 1; 
 	vector<vector<int>> res; //to store the bridges
-	dfs(adj, visited, disc, low, timer, res, src, -1);
+	for(int i=0;i<n;i++)
+	{
+	    if(!visited[i])
+		{
+		    dfs(adj, visited, disc, low, timer, res, i, -1);
+		}
+	}
 	cout<<"All of the bridges are"<<endl;
 	for(auto val : res)
 	{
